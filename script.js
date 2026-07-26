@@ -1,1 +1,5 @@
-console.log("Hello World");
+let choices = ["rock", "paper", "scissors"];
+
+function getComputerChoice() {
+    return choices[Math.floor(Math.random() * choices.length)];
+}
