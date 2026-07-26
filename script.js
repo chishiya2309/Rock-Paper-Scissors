@@ -23,13 +23,28 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        console.log(`It's a tie! Both chose ${humanChoice}.`);
+        alert(`It's a tie! Both chose ${humanChoice}.`);
         return;
     }else if(WINNING_RULES[humanChoice] === computerChoice) {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-        humanChoice += 1;
+        alert(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore += 1;
     }else {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        alert(`You lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore += 1;
     }
 };
+
+function playGame() {
+    let times = parseInt(prompt("Enter number rounds you want to play:"));
+    while (times < 1) {
+        alert("Please enter the positive number!");
+        times = parseInt(prompt("Enter number rounds you want to play:"));
+    }
+    for (let i = 0; i < times; i++) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+    alert(`Thanks you for playing game! Your score: ${humanScore}. Computer score: ${computerScore}`);
+}
 
