@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play an interactive, beautifully designed game of Rock, Paper, Scissors against the computer. First to 5 points wins!">
     <title>Rock Paper Scissors Game</title>
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <script>playGame()</script>
+    <header class="game-header">
+        <h1 class="game-title">Rock • Paper • Scissors</h1>
+        <p class="game-subtitle">First player to reach <span class="highlight">5 points</span> wins the game</p>
+    </header>
+
+    <main class="game-main">
+        <section class="scoreboard">
+            <div class="score-card">
+                <span class="player-label">Player</span>
+                <span class="score-value" id="human-score">0</span>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="score-card">
+                <span class="player-label">Computer</span>
+                <span class="score-value" id="computer-score">0</span>
+            </div>
+        </section>
+
+        <section class="choices-container">
+            <button class="btn" id="rock">
+                <span class="btn-icon">🪨</span>
+                <span class="btn-label">Rock</span>
+            </button>
+            <button class="btn" id="paper">
+                <span class="btn-icon">📄</span>
+                <span class="btn-label">Paper</span>
+            </button>
+            <button class="btn" id="scissors">
+                <span class="btn-icon">✂️</span>
+                <span class="btn-label">Scissors</span>
+            </button>
+        </section>
+
+        <div id="result">
+            <div class="round-message" id="round-message">Choose your weapon to start the game!</div>
+            <div class="winner-announcement" id="winner-announcement"></div>
+            <button class="reset-btn" id="reset-btn">Play Again</button>
+        </div>
+    </main>
+
+    <footer class="game-footer">
+        <p>Rock Paper Scissors &copy; 2026</p>
+    </footer>
 </body>
 </html>
